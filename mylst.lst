@@ -1,0 +1,15 @@
+			section .data
+00000000	14			a db "addition is %d",10,0
+			section  .text
+			global main
+			extern printf
+			main: 
+00000000	310				xor eax,eax
+00000001	311b				xor ebx,ebx
+00000003	3112				xor edx,edx
+00000005	319				xor ecx,ecx
+00000006	B814				mov eax,20
+00000008	BA1e				mov edx,30
+0000000a	01b				add eax,ebx
+0000000b	E8[0]				call printf
+0000000d	83198				add esp,8

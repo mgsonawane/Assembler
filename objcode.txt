@@ -1,0 +1,44 @@
+
+----------------Symbol table--------------
+
+a		1		20		s		D		20		addition is %d",10,0		1		
+main		    - 		  -  		 -  		-		- 		-				3		
+printf		- 		- 		- 		- 		- 		-				4		
+printf		-		-		L		D		0		-				15		
+----------------Literal table--------------
+
+1		lit#1		226164646974696f6e206973202564222c31302c30		a		
+10		lit#2		14						20		
+11		lit#3		1e						30		
+16		lit#4		8						8		
+--------------lst file--------------
+
+  		  		section .data
+		
+00000000		14		a db "addition is %d",10,0
+		
+  		  		section  .text
+		
+  		  		global main
+		
+  		  		extern printf
+		
+           		main:		
+00000000		310			xor eax,eax
+		
+00000001		311b			xor ebx,ebx
+		
+00000003		3112			xor edx,edx
+		
+00000005		319			xor ecx,ecx
+		
+00000006		B814			mov eax,20
+		
+00000008		BA1e			mov edx,30
+		
+0000000a		01b			add eax,ebx
+		
+0000000b		E8[0]			call printf
+		
+0000000d		83198			add esp,8
+		
